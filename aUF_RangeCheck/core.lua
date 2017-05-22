@@ -15,12 +15,12 @@ function aUF_RangeCheck:OnInitialize()
 	})
 	self:RegisterChatCommand({ "/agufrc" }, {
 		name = "agUF RangeCheck",
-		desc = "Config for agUF RangeCheck",
+		desc = config,
 		type = "group",
 		args = {
 			scantime = {
 				name = "Scan time", type = 'range',
-				desc = "Intervall the range should be checked.",
+				desc = intervall,
 				min = 0.5, max = 3.0, step = 0.1,
 				get = function() return self.db.profile.scanTime end,
 				set = function(v)
@@ -31,7 +31,7 @@ function aUF_RangeCheck:OnInitialize()
 			},
 			dimalpha = {
 				name = "Transparency", type = 'range',
-				desc = "Transparency of units who are out of range.",
+				desc = transparency,
 				min = 0.1, max = 1.0, step = 0.1,
 				get = function() return self.db.profile.dimAlpha end,
 				set = function(v)
